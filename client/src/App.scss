@@ -1,0 +1,51 @@
+@import '~bootstrap/scss/bootstrap.scss';
+@import '../node_modules/bootstrap/scss/forms';
+
+
+body,
+#root {
+    min-height: 100vh;
+}
+
+.form-area {
+    margin: 5% 0;
+}
+
+.modal {
+    display: block;
+    background-color: rgba(0,0,0,0.5);
+
+    .modal-dialog {
+        margin-top: 10%;
+    }
+}
+
+.job-list {
+    &-table {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 2px solid #000000;
+        .job-box {
+            padding: 30px 0;
+            background-color: #dddddd;
+
+            &.job-Urgent {
+                background-color: red;
+            }
+
+            &.job-Regular {
+                background-color: yellow;
+            }
+
+            &.job-Trivial {
+                background-color: lightblue;
+            }
+
+            .job-title {
+                display: block;
+                padding: 0 20px;
+                font-size: 25px;
+            }
+        }
+    }
+}
