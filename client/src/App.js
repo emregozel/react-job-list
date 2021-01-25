@@ -23,19 +23,11 @@ function App() {
   }, [search]);
 
   const addJob = job => {
-    // if (!job.job.jobName || /^\s*$/.test(job.job.jobName)) {
-    //   return;
-    // }
     const newJobs = [job, ...jobs];
     setJobs(newJobs);
-    // console.log(...jobs);
   };
 
   const updateJob = (newJob) => {
-    // if (!newValue.text || /^\s*$/.test(newValue.text)) {
-    //   return;
-    // }
-
     setJobs(prev => prev.map(item => (item.id === newJob.id ? newJob : item)));
   };
 
@@ -51,7 +43,6 @@ function App() {
   }
 
   const removeJob = id => {
-    console.log(id);
     const removedArr = [...jobs].filter(job => job.id !== id);
     setJobs(removedArr);
     if(searchResult.length > 0) {

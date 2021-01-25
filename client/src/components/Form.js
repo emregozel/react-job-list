@@ -23,7 +23,9 @@ function Form(props) {
     }, []);
 
     const handleChange = evt => {
-        const { name, value } = evt.target;
+        const name = evt.target.name;
+        let value = evt.target.value;
+        value = value.replace(/[^A-Za-z]/gi, "");
         setUserInput({ [name]: value });
     }
 
@@ -36,7 +38,11 @@ function Form(props) {
                 name: userInput.name,
                 priority: userInput.priority
             });
-            setUserInput('');
+            setUserInput({
+                id: null,
+                name: '',
+                priority: 'Urgent'
+            });
         } else {
             alert('please fill field!');
         }
@@ -58,8 +64,7 @@ function Form(props) {
                         </div>
                         <div className="mb-3">
                             <label htmlFor="priority" className="form-label">Priority</label>
-                            <select className="form-control" value={'Urgent'} name="priority" onChange={handleChange} required>
-                                <option value=""></option>
+                            <select className="form-control" name="priority" onChange={handleChange} required>
                                 {priority.map((item, index) => (
                                     <option value={item.value} key={index}>{item.label}</option>
                                 ))}
