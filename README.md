@@ -1,3 +1,3 @@
 # React Job List App
 
-`yarn install` and then `yarn dev` command will be started project.
+Plese start `yarn install` command in root folder and client folder. Then `yarn dev` command root folder and will be started project.
