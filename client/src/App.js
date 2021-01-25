@@ -20,7 +20,7 @@ function App() {
       return job.name.toLowerCase().includes(search);
     });
     setSearchResult(result);
-  }, [search]);
+  }, [search, jobs]);
 
   const addJob = job => {
     const newJobs = [job, ...jobs];
